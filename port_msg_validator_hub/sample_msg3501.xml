@@ -1,0 +1,57 @@
+<message>
+<_header>
+<sender>MTS</sender>
+<receiver>PA003</receiver>
+<message_type>MSG03501</message_type>
+<process_type>MSG03501PS</process_type>
+<conversation_id>MTSMSG035012026042811140017</conversation_id>
+<message_reference>MTSMSG035012026042811140017</message_reference>
+<timestamp>2026-04-28T23:14:00+03:00</timestamp>
+</_header>
+<contents>
+<XML>
+<Application_Timestamp>2026-04-28T11:11:39+03:00</Application_Timestamp>
+<Cargo_Papers_Ids>
+    <Cargo_Paper_Type>1</Cargo_Paper_Type>
+    <Cargo_Paper_Id>2026-615-1-34887</Cargo_Paper_Id>
+    <Cargo_Paper_Desc>طلب افراج عن شحنة صادر ـ 2026-615-1-34887 ـ</Cargo_Paper_Desc>
+</Cargo_Papers_Ids>
+<Vessel_Visit_Info>
+    <Vessel_Name>TRANSMAR LEGACY</Vessel_Name>
+    <Voyage_Number>18614</Voyage_Number>
+    <Call_Sign>3E3397</Call_Sign>
+    <IMO_No>9357121</IMO_No>
+    <Vessel_Nationality_ISO>PA</Vessel_Nationality_ISO>
+</Vessel_Visit_Info>
+<Carrier_Info>
+    <Shipping_Agency_Code>202452638</Shipping_Agency_Code>
+    <Shipping_Agency_Name>شركة ترانسمارين للوكالات الملاحية</Shipping_Agency_Name>
+</Carrier_Info>
+<Cargo_Information>
+    <BL_Number>ADAJED1861490904</BL_Number>
+    <Port_of_Delivery>SAJED</Port_of_Delivery>
+<Port_of_Loading>EGADA</Port_of_Loading>
+<Port_of_Discharge>SAJED</Port_of_Discharge>
+<Shipper_Information>
+<Name>ISMAIL ABUDAWOOD AND PROCTER &amp; GAMBLE LIMITED</Name>
+<Address>ISMAIL ABUDAWOOD AND PROCTER &amp; GAMBLE LIMITED</Address>
+</Shipper_Information>
+<Consignee_Information>
+<Name>بروكتر وجامبل مصر</Name>
+<Address>المنطقةالصناعية الرابعة - القطعة رقم 52 وجزء من القطعة53أو53ب- مدينة6اكتوبر</Address>
+</Consignee_Information>
+<Goods_Details>
+<Goods_Item_Number>1</Goods_Item_Number>
+<Number_of_Packages>1204</Number_of_Packages>
+<Type_of_Packages>30</Type_of_Packages>
+<Goods_Description>فوط صحيه الويز بوزن صافى 1743.54 كجم </Goods_Description>
+<Goods_Measurements>
+<Measurement>3</Measurement>
+<Measurement_Value>2164.79</Measurement_Value>
+<Measurement_Unit>5</Measurement_Unit>
+</Goods_Measurements>
+</Goods_Details>
+</Cargo_Information>
+</XML>
+</contents>
+</message>

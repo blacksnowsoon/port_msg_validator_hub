@@ -7,7 +7,7 @@ app_license = "mit"
 
 # Apps
 # ------------------
-
+fixtures = ["Port Country", "SPS-Port", "MTS-Port"]
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
@@ -52,7 +52,10 @@ app_license = "mit"
 # ------------------
 # include app icons in desk
 # app_include_icons = "port_msg_validator_hub/public/icons.svg"
-
+website_route_rules = [
+    {"from_route": "/app/message-validator", "to_route": "message_validator"},
+    {"from_route": "/app/msg-schema-parser", "to_route": "msg_schema_parser"}
+]
 # Home Pages
 # ----------
 
@@ -174,9 +177,11 @@ app_license = "mit"
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
+override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "port_msg_validator_hub.event.get_events"
-# }
+    "frappe.msg_validator.validate_message": "port_msg_validator_hub.msg_validator.validate_message",
+    "frappe.msg_validator.get_message_schema": "port_msg_validator_hub.msg_validator.get_message_schema"
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,

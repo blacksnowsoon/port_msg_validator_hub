@@ -1,0 +1,73 @@
+{% extends "templates/base.html" %}
+
+{%- block head_include %}
+		<link rel="stylesheet" href="/assets/port_msg_validator_hub/css/message_validator.css">
+{% endblock -%}
+{% block content %}
+  <div class="container-main">
+    <!-- Header Section -->
+    <div class="header-section">
+      <h1 style="color: white;">📨 Customs Message Validator</h1>
+      <p>Parse and validate customs message</p>
+    </div>
+
+    <!-- Input Card -->
+    <div class="main-card">
+      <div class="card-header">
+        <i class="fas fa-file-import"></i>
+        Paste Your Message
+      </div>
+      <div class="card-body">
+        <div class="info-badge">
+          <i class="fas fa-info-circle"></i> Supports MSG03501, MSG02701, MSG0101
+        </div>
+        
+        <div class="form-group-custom">
+          <label for="xml-input">
+            XML Message Content
+            <span style="color: var(--danger-color);">*</span>
+          </label>
+          <textarea 
+            id="xml-input" 
+            class="form-control" 
+            rows="18"
+            placeholder="Paste your XML message here (MSG03501, MSG02701, MSG0101.) / الصق رسالة XML هنا"></textarea>
+        </div>
+
+        <div class="button-group">
+          <button id="parse-btn" class="btn-custom btn-validate">
+            <i class="fas fa-check-circle"></i>
+            <span>Validate Message</span>
+          </button>
+          <button id="clear-btn" class="btn-custom btn-clear">
+            <i class="fas fa-trash"></i>
+            <span>Clear</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loading" style="display: none; text-align: center; margin: 40px 0;">
+      <div class="spinner" style="margin: 0 auto;"></div>
+      <p style="color: white; margin-top: 20px; font-weight: 600;">Validating message...</p>
+    </div>
+
+    <!-- Results Section -->
+    <div id="results-container"></div>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="empty-state">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+      <p>Your validation results will appear here</p>
+    </div>
+  </div>
+
+
+{% endblock %}
+
+{% block script %}
+  <script src="/assets/port_msg_validator_hub/js/message_validator.js"></script>
+{% endblock %}

@@ -1,0 +1,122 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<message>
+<_header>
+<sender>MTS</sender>
+<receiver>PA003</receiver>
+<message_type>MSG00101</message_type>
+<process_type>MSG00101PS</process_type>
+<conversation_id>MTSMSG001012026051410360848</conversation_id>
+<message_reference>MTSMSG001012026051410360848</message_reference>
+<refmessage_reference/>
+<timestamp>2026-05-14T10:36:08+03:00</timestamp>
+</_header>
+<contents>
+<Transaction>
+<Vessel_Visit_Info>
+<APA_Vessel_Visit_Id>9275</APA_Vessel_Visit_Id>
+<Vessel_Name>YELLOWBILL</Vessel_Name>
+<Voyage_Number>1</Voyage_Number>
+<Call_Sign>3E6111</Call_Sign>
+<IMO_No>9977945</IMO_No>
+<Vessel_Nationality_ISO>PA</Vessel_Nationality_ISO>
+</Vessel_Visit_Info>
+<Document_Information>
+<Document_Type>I</Document_Type>
+</Document_Information>
+</Transaction>
+<XML>
+<Carrier_Information>
+<Carrier_Name>NIL</Carrier_Name>
+<Transaction_Remarks>2026-402-123</Transaction_Remarks>
+</Carrier_Information>
+<Vessel_Information>
+<Vessel_ID>9977945</Vessel_ID>
+<Vessel_Name>YELLOWBILL</Vessel_Name>
+<Vessel_Nationality_ISO>PA</Vessel_Nationality_ISO>
+</Vessel_Information>
+<Voyage_Details>
+<Voyage_Number>1</Voyage_Number>
+<Arrival_Timestamp>2026-05-12T21:50:00</Arrival_Timestamp>
+<Target_Port>EGADA</Target_Port>
+</Voyage_Details>
+<Control_Totals>
+<Total_Consignments>2</Total_Consignments>
+<Total_Containers>0</Total_Containers>
+</Control_Totals>
+<Manifest_Cargo>
+<Cargo_Information>
+<Cargo_Agency_Code>487215974</Cargo_Agency_Code>
+<Cargo_Agency_Name>جانس ايجيبت للخدمات اللوجيستيه</Cargo_Agency_Name>
+<BL_Number>12</BL_Number>
+<Port_of_Delivery>EGEFZ</Port_of_Delivery>
+<Port_of_Loading>BRIBB</Port_of_Loading>
+<Port_of_Discharge>EGADA</Port_of_Discharge>
+<Shipper_Information>
+<Name>NIL</Name>
+<Address>NIL</Address>
+</Shipper_Information>
+<Consignee_Information>
+<Name>المصرية لبلوكات الانود الكربونية</Name>
+<Address>القطاع الصناعى الاول شمال غرب خليج السويس العين السخنة</Address>
+</Consignee_Information>
+<Notify_Information>
+<Name>المصرية لبلوكات الانود الكربونية</Name>
+<Address>القطاع الصناعى الاول شمال غرب خليج السويس العين السخنة</Address>
+</Notify_Information>
+<Goods_Details>
+<Goods_Item_Number>1</Goods_Item_Number>
+<Number_of_Packages>1</Number_of_Packages>
+<Type_of_Packages_1>27</Type_of_Packages_1>
+<Goods_Description>GREEN PETROLEUM COKE IN BULK</Goods_Description>
+<Goods_Measurements>
+<Measurement>3</Measurement>
+<Measurement_Value>10000000</Measurement_Value>
+<Measurement_Unit>5</Measurement_Unit>
+</Goods_Measurements>
+<Goods_Measurements>
+<Measurement>2</Measurement>
+<Measurement_Value>0</Measurement_Value>
+<Measurement_Unit>3</Measurement_Unit>
+</Goods_Measurements>
+</Goods_Details>
+</Cargo_Information>
+<Cargo_Information>
+<Cargo_Agency_Code>487215974</Cargo_Agency_Code>
+<Cargo_Agency_Name>جانس ايجيبت للخدمات اللوجيستيه</Cargo_Agency_Name>
+<BL_Number>13</BL_Number>
+<Port_of_Delivery>EGEFZ</Port_of_Delivery>
+<Port_of_Loading>ESCAS</Port_of_Loading>
+<Port_of_Discharge>EGADA</Port_of_Discharge>
+<Shipper_Information>
+<Name>NIL</Name>
+<Address>NIL</Address>
+</Shipper_Information>
+<Consignee_Information>
+<Name>المصرية لبلوكات الانود الكربونية</Name>
+<Address>القطاع الصناعى الاول شمال غرب خليج السويس العين السخنة</Address>
+</Consignee_Information>
+<Notify_Information>
+<Name>المصرية لبلوكات الانود الكربونية</Name>
+<Address>القطاع الصناعى الاول شمال غرب خليج السويس العين السخنة</Address>
+</Notify_Information>
+<Goods_Details>
+<Goods_Item_Number>1</Goods_Item_Number>
+<Number_of_Packages>1</Number_of_Packages>
+<Type_of_Packages_1>27</Type_of_Packages_1>
+<Goods_Description>GREEN PETROLEUM COKE IN BULK</Goods_Description>
+<Goods_Measurements>
+<Measurement>3</Measurement>
+<Measurement_Value>10098870.00</Measurement_Value>
+<Measurement_Unit>5</Measurement_Unit>
+</Goods_Measurements>
+<Goods_Measurements>
+<Measurement>2</Measurement>
+<Measurement_Value>0</Measurement_Value>
+<Measurement_Unit>3</Measurement_Unit>
+</Goods_Measurements>
+</Goods_Details>
+</Cargo_Information>
+</Manifest_Cargo>
+</XML>
+</contents>
+</message>

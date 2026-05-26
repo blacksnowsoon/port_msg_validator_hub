@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:port_code",
+ "creation": "2025-05-20 17:23:45.497751",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "country_code",
+  "port_code",
+  "port_type",
+  "column_break_iscr",
+  "country_arabic_name",
+  "port_arabic_name",
+  "port_english_name",
+  "column_break_ifgu"
+ ],
+ "fields": [
+  {
+   "fieldname": "country_code",
+   "fieldtype": "Link",
+   "label": "Country Code",
+   "options": "Port Country"
+  },
+  {
+   "fieldname": "port_code",
+   "fieldtype": "Data",
+   "label": "Port Code",
+   "unique": 1
+  },
+  {
+   "fieldname": "port_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Port Type"
+  },
+  {
+   "fieldname": "column_break_iscr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "country_code.country_arabic_name",
+   "fieldname": "country_arabic_name",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Country Arabic Name"
+  },
+  {
+   "fieldname": "port_arabic_name",
+   "fieldtype": "Data",
+   "label": "Port Arabic Name"
+  },
+  {
+   "fieldname": "port_english_name",
+   "fieldtype": "Data",
+   "label": "Port English Name"
+  },
+  {
+   "fieldname": "column_break_ifgu",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-27 02:17:38.169531",
+ "modified_by": "Administrator",
+ "module": "Port MSG Validator Hub",
+ "name": "MTS-Port",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "port_arabic_name"
+}

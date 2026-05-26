@@ -1,0 +1,182 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MSG00101 Expected Vessel Arrival Schema",
+  "type": "object",
+  "required": ["message"],
+  "properties": {
+    "message": {
+      "type": "object",
+      "required": ["header", "contents"],
+      "properties": {
+        "header": {
+          "type": "object",
+          "required": ["sender", "receiver", "message_type", "process_type", "conversation_id", "message_reference", "timestamp"],
+          "properties": {
+            "sender": { "type": "string", "maxLength": 10 },
+            "receiver": { "type": "string", "maxLength": 255 },
+            "message_type": { 
+              "type": "string", 
+              "enum": ["MSG00101", "MSG00101 E"] 
+            },
+            "process_type": { "type": "string", "const": "MSG00101PS" },
+            "conversation_id": { "type": "string", "maxLength": 30 },
+            "message_reference": { "type": "string", "maxLength": 50 },
+            "refmessage_reference": { "type": ["string", "null"], "maxLength": 50 },
+            "timestamp": { "type": "string", "format": "date-time" }
+          }
+        },
+        "contents": {
+          "type": "object",
+          "required": ["Transaction"],
+          "properties": {
+            "Transaction": {
+              "type": "object",
+              "description": "Transaction Controller & Identification",
+              "required": ["Vessel_Visit_Info", "Document_Information"],
+              "properties": {
+                "Vessel_Visit_Info": {
+                  "type": "object",
+                  "required": ["APA_Vessel_Visit_Id"],
+                  "properties": {
+                    "APA_Vessel_Visit_Id": { "type": "string", "maxLength": 20 },
+                    "Vessel_Name": { "type": "string", "maxLength": 255 },
+                    "Voyage_Number": { "type": "string", "maxLength": 17 },
+                    "Call_Sign": { "type": "string", "maxLength": 10 },
+                    "IMO_No": { "type": "string", "maxLength": 10 },
+                    "Vessel_Nationality_ISO": { "type": "string", "maxLength": 32 }
+                  }
+                },
+                "Document_Information": {
+                  "type": "object",
+                  "required": ["Document_Type"],
+                  "properties": {
+                    "Document_Type": { "type": "string", "enum": ["I", "E"], "default": "I" },
+                    "Total_Pages": { "type": "integer", "maximum": 99999 }
+                  }
+                }
+              }
+            },
+            "XML": {
+              "type": "object",
+              "properties": {
+                "Carrier_Information": {
+                  "type": "object",
+                  "properties": {
+                    "Carrier_Name": { "type": "string", "maxLength": 255 },
+                    "Transaction_Remarks": { "type": "string", "maxLength": 1000 }
+                  }
+                },
+                "Vessel_Information": {
+                  "type": "object",
+                  "properties": {
+                    "Vessel_ID": { "type": "string", "maxLength": 20 },
+                    "Vessel_Name": { "type": "string", "maxLength": 255 },
+                    "Vessel_Nationality_ISO": { "type": "string", "maxLength": 32 }
+                  }
+                },
+                "Voyage_Details": {
+                  "type": "object",
+                  "properties": {
+                    "Voyage_Number": { "type": "string", "maxLength": 17 },
+                    "Arrival_Timestamp": { "type": "string" },
+                    "Target_Port": { "type": "string", "maxLength": 10 }
+                  }
+                },
+                "Control_Totals": {
+                  "type": "object",
+                  "properties": {
+                    "Total_Consignments": { "type": "integer" },
+                    "Total_Containers": { "type": "integer" }
+                  }
+                },
+                "Manifest_Cargo": {
+                  "type": "object",
+                  "required": ["Cargo_Information"],
+                  "properties": {
+                    "Cargo_Information": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "type": "object",
+                        "required": ["Cargo_Agency_Code", "BL_Number", "Port_of_Delivery", "Port_of_Loading", "Port_of_Discharge", "Shipper_Information", "Consignee_Information", "Goods_Details"],
+                        "properties": {
+                          "Cargo_Agency_Code": { "type": "string", "maxLength": 32 },
+                          "BL_Number": { "type": "string", "maxLength": 35 },
+                          "Port_of_Delivery": { "type": "string", "maxLength": 32 },
+                          "Port_of_Loading": { "type": "string", "maxLength": 32 },
+                          "Port_of_Discharge": { "type": "string", "maxLength": 32 },
+                          "Shipper_Information": {
+                            "type": "object",
+                            "required": ["Name"],
+                            "properties": {
+                              "Name": { "type": "string", "maxLength": 255 },
+                              "Address": { "type": "string", "maxLength": 255 }
+                            }
+                          },
+                          "Consignee_Information": {
+                            "type": "object",
+                            "required": ["Name"],
+                            "properties": {
+                              "Name": { "type": "string", "maxLength": 255 },
+                              "Address": { "type": "string", "maxLength": 255 }
+                            }
+                          },
+                          "Notify_Information": {
+                            "type": "object",
+                            "required": ["Name"],
+                            "properties": {
+                              "Name": { "type": "string", "maxLength": 255 },
+                              "Address": { "type": "string", "maxLength": 255 }
+                            }
+                          },
+                          "Goods_Details": {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                              "type": "object",
+                              "required": ["Goods_Item_Number", "Goods_Description", "Goods_Measurements"],
+                              "properties": {
+                                "Goods_Item_Number": { "type": "integer" },
+                                "Goods_Description": { "type": "string", "maxLength": 1000 },
+                                "Goods_Measurements": {
+                                  "type": "array",
+                                  "minItems": 1,
+                                  "items": {
+                                    "type": "object",
+                                    "required": ["Measurement", "Measurement_Value", "Measurement_Unit"],
+                                    "properties": {
+                                      "Measurement": { "type": "string" },
+                                      "Measurement_Value": { "type": "string" },
+                                      "Measurement_Unit": { "type": "string" }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "EDI": {
+              "type": "object",
+              "required": ["Cargo_Agency_Code", "EDI_File"],
+              "properties": {
+                "Cargo_Agency_Code": { "type": "string", "maxLength": 32 },
+                "Cargo_Agency_Name": { "type": "string", "maxLength": 255 },
+                "EDI_File": { "type": "string", "description": "EDI Stream (Dump)" }
+              }
+            }
+          },
+          "oneOf": [
+            { "required": ["XML"] },
+            { "required": ["EDI"] }
+          ]
+        }
+      }
+    }
+  }
+}

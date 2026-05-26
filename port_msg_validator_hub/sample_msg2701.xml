@@ -1,0 +1,38 @@
+<message>
+<_header>
+<sender>MTS</sender>
+<receiver>PA003</receiver>
+<message_type>MSG02701</message_type>
+<process_type>MSG02701PS</process_type>
+<conversation_id>MTSMSG027012026042823143406</conversation_id>
+<message_reference>MTSMSG027012026042823143406</message_reference>
+<timestamp>2026-04-28T23:14:34+03:00</timestamp>
+</_header>
+<contents>
+<XML>
+<Document_Type>E</Document_Type>
+<Cargo_Papers_Ids>
+<Cargo_Paper_Type>1</Cargo_Paper_Type>
+<Cargo_Paper_Id>2026-615-1-34887</Cargo_Paper_Id>
+<Cargo_Paper_Desc>طلب افراج عن شحنة صادر ـ 2026-615-1-34887 ـ</Cargo_Paper_Desc>
+</Cargo_Papers_Ids>
+<Declaration_Applicant>
+<Applicant_Code>950506567</Applicant_Code>
+<Applicant_Name>محمد سعيد مطاوع عبدالباقى</Applicant_Name>
+</Declaration_Applicant>
+<Cargo_Information>
+<BL_Number>ADAJED1861490904</BL_Number>
+<Port_of_Loading>EGADA</Port_of_Loading>
+<Consignee_Details>
+<Consignee_Code>100270468</Consignee_Code>
+<Consignee_Name>بروكتر وجامبل مصر</Consignee_Name>
+</Consignee_Details>
+<Goods_Details>
+<Goods_Item_Number>1</Goods_Item_Number>
+<Goods_Status>01</Goods_Status>
+<Weight_Release>N</Weight_Release>
+</Goods_Details>
+</Cargo_Information>
+</XML>
+</contents>
+</message>

@@ -1,0 +1,176 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MSG3501 Design Contract Schema",
+  "type": "object",
+  "x-business-rules": {
+    "blocked_ports": ["XZiii"]
+  },
+  "required": ["message"],
+  "properties": {
+    "message": {
+      "type": "object",
+      "required": ["header", "contents"],
+      "properties": {
+        "header": {
+          "type": "object",
+          "required": [
+            "sender",
+            "receiver",
+            "message_type",
+            "process_type",
+            "conversation_id",
+            "message_reference",
+            "timestamp"
+          ],
+          "properties": {
+            "sender": { "type": "string", "maxLength": 10 },
+            "receiver": { "type": "string", "maxLength": 255 },
+            "message_type": { "type": "string", "enum": ["MSG03501", "MSG03501 E"], "maxLength": 10 },
+            "process_type": { "type": "string", "const": "MSG03501PS", "maxLength": 20 },
+            "conversation_id": { "type": "string", "maxLength": 30 },
+            "message_reference": { "type": "string", "maxLength": 50 },
+            "refmessage_reference": { "type": ["string", "null"], "maxLength": 50 },
+            "timestamp": { "type": "string", "format": "YYYY-MM-DDThh:mm:ss" }
+          }
+        },
+        "contents": {
+          "type": "object",
+          "required": ["XML"],
+          "properties": {
+            "XML": {
+              "type": "object",
+              "required": [
+                "Application_Timestamp",
+                "Cargo_Papers_Ids",
+                "Vessel_Visit_Info",
+                "Carrier_Info",
+                "Cargo_Information"
+              ],
+              "properties": {
+                "Application_Timestamp": { "type": "string", "format": "YYYY-MM-DDThh:mm:ss" },
+                "Cargo_Papers_Ids": {
+                  "type": "object",
+                  "required": ["Cargo_Paper_Type", "Cargo_Paper_Id"],
+                  "properties": {
+                    "Cargo_Paper_Type": { "type": "string", "enum": ["1", "3"] },
+                    "Cargo_Paper_Id": { "type": "string", "maxLength": 30 },
+                    "Cargo_Paper_Desc": { "type": "string", "maxLength": 255 }
+                  }
+                },
+                "Vessel_Visit_Info": {
+                  "type": "object",
+                  "required": ["Vessel_Name", "Voyage_Number", "Vessel_Nationality_ISO"],
+                  "properties": {
+                    "APA_Vessel_Visit_Id": { "type": "string", "maxLength": 20 },
+                    "Vessel_Name": { "type": "string", "maxLength": 255 },
+                    "Voyage_Number": { "type": "string", "maxLength": 17 },
+                    "Call_Sign": { "type": "string", "maxLength": 10 },
+                    "IMO_No": { "type": "string", "maxLength": 10 },
+                    "Vessel_Nationality_ISO": { "type": "string", "maxLength": 2, "description": "ISO 3166-1 alpha-2" }
+                  }
+                },
+                "Carrier_Info": {
+                  "type": "object",
+                  "required": ["Shipping_Agency_Code", "Shipping_Agency_Name"],
+                  "properties": {
+                    "Carrier_Code": { "type": "string", "maxLength": 32 },
+                    "Carrier_Name": { "type": "string", "maxLength": 255 },
+                    "Shipping_Agency_Code": { "type": "string", "maxLength": 32 },
+                    "Shipping_Agency_Name": { "type": "string", "maxLength": 255 }
+                  }
+                },
+                "Cargo_Information": {
+                  "type": "object",
+                  "required": [
+                    "BL_Number",
+                    "Port_of_Delivery",
+                    "Port_of_Loading",
+                    "Port_of_Discharge",
+                    "Shipper_Information",
+                    "Consignee_Information",
+                    "Goods_Details"
+                  ],
+                  "properties": {
+                    "BL_Number": { "type": "string", "maxLength": 35 },
+                    "Port_of_Delivery": { "type": "string", "maxLength": 32 },
+                    "Port_of_Loading": { "type": "string", "maxLength": 32 },
+                    "Port_of_Discharge": { "type": "string", "maxLength": 32 },
+                    "Shipper_Information": {
+                      "type": "object",
+                      "required": ["Name"],
+                      "properties": {
+                        "Name": { "type": "string", "maxLength": 255 },
+                        "Address": { "type": "string", "maxLength": 255 }
+                      }
+                    },
+                    "Consignee_Information": {
+                      "type": "object",
+                      "required": ["Name"],
+                      "properties": {
+                        "Name": { "type": "string", "maxLength": 255 },
+                        "Address": { "type": "string", "maxLength": 255 }
+                      }
+                    },
+                    "Goods_Details": {
+                      "type": "object",
+                      "required": ["Goods_Item_Number", "Number_of_Packages", "Type_of_Packages", "Goods_Description", "Goods_Measurements"],
+                      "properties": {
+                        "Goods_Item_Number": { "type": "number", "maxLength": 3 },
+                        "Number_of_Packages": { "type": "number", "maxLength": 8 },
+                        "Type_of_Packages": { "type": "string", "maxLength": 32 },
+                        "Goods_Description": { "type": "string", "maxLength": 1000 },
+                        "Goods_Measurements": {
+                          "type": "object",
+                          "required": ["Measurement", "Measurement_Value", "Measurement_Unit"],
+                          "properties": {
+                            "Measurement": { "type": "string", "maxLength": 32 },
+                            "Measurement_Value": { "type": "string", "maxLength": 18 },
+                            "Measurement_Unit": { "type": "string", "maxLength": 32 }
+                          }
+                        },
+                        "Split_Goods_Placement": {
+                          "type": "object",
+                          "required": ["Containers_Number", "Container_Size", "Container_Type", "Container_Measurements"],
+                          "properties": {
+                            "Containers_Number": { "type": "string", "maxLength": 11 },
+                            "Container_Size": { "type": "string", "maxLength": 32 },
+                            "Container_Type": { "type": "string", "maxLength": 32 },
+                            "Seal_No": { "type": "string", "maxLength": 35 },
+                            "Container_Measurements": {
+                              "type": "object",
+                              "required": ["Measurement", "Measurement_Value", "Measurement_Unit"],
+                              "properties": {
+                                "Measurement": { "type": "string", "maxLength": 32 },
+                                "Measurement_Value": { "type": "string", "maxLength": 18 },
+                                "Measurement_Unit": { "type": "string", "maxLength": 32 }
+                              }
+                            }
+                          }
+                        },
+                        "Dangerous_Goods": {
+                          "type": "object",
+                          "required": ["Dangerous_Code"],
+                          "properties": {
+                            "Dangerous_Code": { "type": "string", "maxLength": 32 },
+                            "UNDG_Number": { "type": "string", "maxLength": 32 }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "Attachments": {
+                  "type": "object",
+                  "properties": {
+                    "Document_Description": { "type": "string", "maxLength": 255 },
+                    "Document": { "type": "string", "maxLength": 255 }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
