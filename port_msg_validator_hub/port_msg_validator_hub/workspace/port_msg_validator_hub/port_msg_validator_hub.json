@@ -1,0 +1,44 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"5P416NNZ8h\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Port MSG Validator Hub</span>\",\"col\":12}},{\"id\":\"sRF5BXfiPh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MTS MSG Validator\",\"col\":3}},{\"id\":\"coJD_nBFLI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MSG Schema\",\"col\":3}}]",
+ "creation": "2026-05-27 02:42:23.402147",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "quality",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Port MSG Validator Hub",
+ "links": [],
+ "modified": "2026-05-27 14:43:11.189792",
+ "modified_by": "Administrator",
+ "module": "Port MSG Validator Hub",
+ "name": "Port MSG Validator Hub",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 28.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "MTS MSG Validator",
+   "type": "URL",
+   "url": "/app/message-validator"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "MSG Schema",
+   "type": "URL",
+   "url": "/app/msg-schema-parser"
+  }
+ ],
+ "title": "Port MSG Validator Hub"
+}
