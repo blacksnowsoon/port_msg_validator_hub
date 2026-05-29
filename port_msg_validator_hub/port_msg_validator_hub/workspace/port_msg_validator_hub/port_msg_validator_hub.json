@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"5P416NNZ8h\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Port MSG Validator Hub</span>\",\"col\":12}},{\"id\":\"sRF5BXfiPh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MTS MSG Validator\",\"col\":3}},{\"id\":\"coJD_nBFLI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MSG Schema\",\"col\":3}}]",
+ "content": "[{\"id\":\"5P416NNZ8h\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Port MSG Validator Hub</span>\",\"col\":12}},{\"id\":\"sRF5BXfiPh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MTS MSG Validator\",\"col\":3}},{\"id\":\"coJD_nBFLI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MSG Schema\",\"col\":3}},{\"id\":\"agc6eipP9l\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"SPS Ports\",\"col\":3}},{\"id\":\"RIvWLFA6hb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MTS-Ports\",\"col\":3}}]",
  "creation": "2026-05-27 02:42:23.402147",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Port MSG Validator Hub",
  "links": [],
- "modified": "2026-05-27 14:43:11.189792",
+ "modified": "2026-05-29 20:43:07.155915",
  "modified_by": "Administrator",
  "module": "Port MSG Validator Hub",
  "name": "Port MSG Validator Hub",
@@ -28,6 +28,14 @@
   {
    "color": "Grey",
    "doc_view": "List",
+   "label": "SPS Ports",
+   "link_to": "SPS-Port",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
    "label": "MTS MSG Validator",
    "type": "URL",
    "url": "/app/message-validator"
@@ -38,6 +46,14 @@
    "label": "MSG Schema",
    "type": "URL",
    "url": "/app/msg-schema-parser"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "MTS-Ports",
+   "link_to": "MTS-Port",
+   "stats_filter": "[]",
+   "type": "DocType"
   }
  ],
  "title": "Port MSG Validator Hub"
