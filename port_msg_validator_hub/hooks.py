@@ -7,7 +7,7 @@ app_license = "mit"
 
 # Apps
 # ------------------
-fixtures = ["Port Country", "SPS-Port", "MTS-Port"]
+fixtures = []
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
