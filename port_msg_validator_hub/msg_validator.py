@@ -189,8 +189,8 @@ class UniversalMessageValidator:
             
         except Exception as e:
             frappe.log_error(
-                f"Unexpected error in validate_message: {str(e)}", 
-                reference=xml_string[:500] if xml_string else None
+                title="UniversalMessageValidator.validate_message error",
+                message=f"Unexpected error in validate_message: {str(e)}\nInput XML: {xml_string[:500] if xml_string else None}"
             )
             return self._error_response(f"Validation failed: {str(e)}")
     
@@ -357,6 +357,20 @@ class UniversalMessageValidator:
             
         return True, None
 
+    def _validate_package_type(self, package_type_code):
+        """
+        Check if package type exists in Type of Package doctype.
+        Returns: (is_valid, error_message)
+        """
+        if not package_type_code:
+            return False, "Package type code is missing"
+            
+        exists = frappe.db.exists("Type of Package", {"code": package_type_code})
+        if not exists:
+            return False, f"Package type code '{package_type_code}' does not exist in the system"
+            
+        return True, None
+
     def _validate_business_rules(self, data, path_prefix=None):
         """
         Recursively validate custom business rules (like port code existence).
@@ -375,6 +389,16 @@ class UniversalMessageValidator:
                 # Check if this key is a port field
                 if key in port_fields and value:
                     is_valid, error_msg = self._validate_port_code(value)
+                    if not is_valid:
+                        path_str = " -> ".join(current_path)
+                        self.error_paths.append(current_path)
+                        self.errors['invalid_values'].append(
+                            f"Field '{path_str}': {error_msg}"
+                        )
+                
+                # Check if this key is a package type field
+                if key == 'Type_of_Packages' and value:
+                    is_valid, error_msg = self._validate_package_type(value)
                     if not is_valid:
                         path_str = " -> ".join(current_path)
                         self.error_paths.append(current_path)
