@@ -645,12 +645,12 @@ def get_message_schema(message_type):
     if '-' in normalized_type:
         normalized_type = normalized_type.split('-')[0]
         
-    # Standardize format (e.g. MSG2701 -> MSG02701)
-    # The schema map expects a leading zero for 4-digit message numbers
+    # Standardize format (e.g. MSG2701 -> MSG02701, MSG101 -> MSG00101)
+    # The schema map expects 5 digits for the message number
     if normalized_type.startswith('MSG'):
         num_part = normalized_type[3:]
-        if len(num_part) == 4:
-            normalized_type = f"MSG0{num_part}"
+        if len(num_part) < 5:
+            normalized_type = f"MSG{num_part.zfill(5)}"
         
     validator = UniversalMessageValidator()
     schema = validator._load_schema(normalized_type)
